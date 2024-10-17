@@ -1,0 +1,157 @@
+@import "../../style/fonts.scss";
+@import "../../style/variables.scss";
+@import "../../style/mixins.scss";
+
+.b-header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid var(--light-font);
+    z-index: 99;
+
+    &_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: var(--block-width);
+        margin: 0 auto;
+        padding: 20px 0;
+
+        @media (max-width: 670px) {
+            padding: 10px 0;
+        }
+    }
+
+    &_logo {
+        width: max(8%, 100px);
+        margin-right: max(4%, 30px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &_nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media (max-width: 670px) {
+            flex-wrap: wrap;
+            align-content: flex-start;
+            position: fixed;
+            gap: 60px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background-color: #fff;
+            padding-top: 0;
+            transition: 0.5s ease-out;
+        }
+
+        &.active {
+            @media (max-width: 670px) {
+                height: 100dvh;
+                padding-top: 100px;
+                transition: 0.5s ease-out;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            gap: var(--main-margin);
+
+            @media (max-width: 670px) {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
+        &-link {
+            text-decoration: none;
+            font-size: 1.15rem;
+            padding: 10px;
+            transition: 0.3s;
+
+            @media (max-width: 670px) {
+                text-align: center;
+            }
+
+            &:not(.active):hover {
+                color: var(--bright-color);
+                transition: 0.3s;
+            }
+
+            &.active {
+                font-family: Causten-Bold, sans-serif;
+                cursor: default;
+            }
+        }
+    }   
+
+    &_user-menu {
+        display: flex;
+        gap: 15px;
+        margin-left: auto;
+
+        @media (max-width: 670px) {
+            margin: 0 auto;
+        }
+
+        &.auth {
+            gap: 30px;
+        }
+    }
+
+    &_user-link {
+        @include iconLink;
+        transition: 0.4s;
+
+        &:hover, &.active {
+            background-color: var(--bright-color);
+            transition: 0.4s;
+    
+            svg path {
+                stroke: #fff;
+                transition: 0.4s;
+            }
+        }
+    }
+
+    &_auth-link {
+        @include buttonLight;
+        width: 150px;
+        color: var(--bright-color);
+
+        &.active {
+            @include buttonLightHover;
+        }
+    }
+
+    &_mobile-button {
+        display: none;
+
+        @media (max-width: 670px) {
+            display: inline-block;
+            width: 50px;
+            aspect-ratio: 1 / 1;
+            background: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><svg id="Слой_1" style="enable-background:new 0 0 139 139;" version="1.1" viewBox="0 0 139 139" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:none;stroke:%233C4242;stroke-width:6;stroke-miterlimit:10;}</style><line class="st0" id="XMLID_6_" x1="26.5" x2="112.5" y1="46.3" y2="46.3"/><line class="st0" id="XMLID_9_" x1="26.5" x2="112.5" y1="92.7" y2="92.7"/><line class="st0" id="XMLID_8_" x1="26.5" x2="112.5" y1="69.5" y2="69.5"/></svg>') no-repeat center center;
+            background-size: 100%;
+            border: none;
+            position: relative;
+            z-index: 10;
+        }
+
+        &.active {
+            @media (max-width: 670px) {
+                background: url('data:image/svg+xml,<svg width="800px" height="800px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7L7 18M7 7L18 18" stroke="%233C4242" stroke-width="1.2"/></svg>') no-repeat center center;
+                background-size: 100%;
+            }
+        }
+    }
+}

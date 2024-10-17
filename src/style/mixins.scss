@@ -1,0 +1,123 @@
+@mixin button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Causten-SemiBold, sans-serif;
+    border-radius: 8px;
+    border: 1px solid var(--main-font);
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+@mixin buttonDark {
+    @include button;
+    background: var(--main-font);
+    color: var(--back-font);
+    &:hover {
+        @include buttonDarkHover;
+    }
+}
+
+@mixin buttonLight {
+    @include button;
+    background: var(--back-font);
+    color: var(--main-font);
+    &:hover {
+        @include buttonLightHover;
+    }
+}
+
+@mixin buttonBright {
+    @include button;
+    background-color: var(--bright-color);
+    color: var(--back-font);
+    border-color: var(--bright-color);
+    * {
+        color: var(--back-font);
+    }
+    &:hover {
+        @include buttonBrightHover;
+    }
+}
+
+@mixin buttonDarkHover {
+    background-color: var(--back-font);
+    color: var(--bright-color);
+    transition: background-color 0.4s;
+}
+
+@mixin buttonLightHover {
+    background-color: var(--bright-color);
+    color: var(--back-font);
+    border-color: var(--bright-color);
+    transition: background-color 0.4s;
+}
+
+@mixin buttonBrightHover {
+    background-color: var(--main-font);
+    border-color: var(--main-font);
+    transition: background-color 0.4s;
+}
+
+@mixin iconLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: var(--back-color);
+    transition: border color background-color 0.3s;
+}
+
+@mixin coverImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin cardImage {
+    aspect-ratio: 1 / 1.3;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+
+    img {
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 120%;
+    }
+}
+
+@mixin titleLine {
+    font-family: Coresans-Bold, sans-serif;
+    font-size: 1.65rem;
+    margin-bottom: max(4.9vw, 28px);
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 0.8em;
+        border-radius: 4px;
+        background-color: var(--bright-color);
+        margin: 0 15px -2px 0;
+    }
+}
+
+@mixin gridTemplate {
+    row-gap: max(3vw, 30px);
+    column-gap: max(2vw, 20px);
+    grid-template: auto / repeat(auto-fill, minmax(250px, 1fr));
+
+    @media (max-width: 1000px) {
+        grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    @media (max-width: 500px) {
+        grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

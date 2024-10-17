@@ -1,0 +1,38 @@
+@import "../../style/mixins.scss";
+
+.b-text {
+    width: var(--block-width);
+    margin: max(5vw, 35px) auto;
+
+    h1 {
+        @include titleLine;
+    }
+
+    h2 {
+        font-family: Causten-Bold, sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-family: Causten-SemiBold, sans-serif;
+        font-size: clamp(17px, 1.45vw, 24px);
+        margin-bottom: 10px;    
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+
+    p, li {
+        padding-bottom: 10px;
+    }
+
+    strong {
+        font-family: Causten-SemiBold, sans-serif;
+    }
+
+    .button-link--dark {
+       margin-top: 40px; 
+    }
+}

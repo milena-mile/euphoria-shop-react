@@ -1,0 +1,16 @@
+:root {
+    --main-font: #3C4242;
+    --light-font: #807D7E;
+    --bright-color: #8A33FD;
+    --back-color: #F6F6F6;
+    --back-font: #fff;
+    --border-color: #BEBCBD;
+
+    --box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.4);
+
+    --block-width: min(90%, 1600px);
+    --block-gap: max(5%, calc(50% - 800px));
+
+    --main-margin: max(3vw, 25px);
+    --big-margin: max(6vw, 40px);
+}

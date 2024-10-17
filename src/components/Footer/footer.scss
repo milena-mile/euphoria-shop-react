@@ -1,0 +1,79 @@
+@import "../../style/mixins.scss";
+
+.b-footer {
+    background-color: var(--main-font);
+    padding: max(5vw, 35px) 0;
+    margin-top: auto;
+
+    &_wrap {
+        width: var(--block-width);
+        margin: 0 auto;
+    }
+
+    [class^="b-footer_item-"] {
+        * {
+            color: var(--back-color);
+        }
+    }
+
+    &_nav {
+        display: grid;
+        grid-template: auto / repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 3.6666%;
+        row-gap: var(--main-margin);
+        margin-bottom: 30px;
+
+        a {
+            font-family: Causten-Regular, sans-serif;
+            display: block;
+            text-decoration: none;
+            padding: 5px 0;
+            margin-bottom: 10px;
+
+            &:not(.active):hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &.active {
+                font-family: Causten-Black, sans-serif;
+                cursor: default;
+            }
+        }
+    }
+
+    &_nav-title {
+        font-family: Causten-Bold, sans-serif;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    &_social {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 40px;
+
+        &-item {
+            @include iconLink;
+            width: 40px;
+            height: 40px;
+
+            &:hover {
+                background-color: var(--bright-color);
+                transition: 0.3s;
+        
+                svg path {
+                    fill: #fff;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+
+    &_copyright {
+        color: var(--back-color);
+        padding-top: 30px;
+        border-top: 1px solid #807D7E;
+        text-align: center;
+    }
+}

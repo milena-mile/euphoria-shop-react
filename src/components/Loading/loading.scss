@@ -1,0 +1,68 @@
+.b-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--block-gap) 0;
+    height: 100%;
+    max-height: 80dvh;
+    min-height: 35dvh;
+
+    img {
+        width: max(7vw, 80px);
+        height: auto;
+        animation: loading 0.8s infinite;
+    }
+    
+    &-road {
+        width: max(7vw, 80px);
+        overflow: hidden;
+        height: 5px;
+        position: relative;
+
+        @media (max-width: 800px) {
+            height: 3px;
+        }
+
+        span {
+            background-color: var(--main-font);
+            position: absolute;
+            top: 0;
+            width: 90%;
+            height: 100%;
+
+            &:nth-of-type(1) {
+                animation: road 1.5s linear infinite;
+            }
+            &:nth-of-type(2) {
+                animation: road 1.5s 0.75s linear infinite;
+            }
+        }
+    }
+
+    &-text {
+        padding-top: 15px;
+        font-size: clamp(20px, 1.8vw, 30px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes road {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
