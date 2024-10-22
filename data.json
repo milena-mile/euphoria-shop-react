@@ -1,0 +1,131 @@
+{
+    "banner": {
+        "slide-1": {
+            "category": "T-shirts / Tops",
+            "title": "Summer Value Pack",
+            "description": "cool / colorful / comfy",
+            "color": "#00b7dc",
+            "image": "banner-1.webp",
+            "link": "/women/t-shirts"
+        },
+        "slide-2": {
+            "category": "Dresses",
+            "title": "Best Summer Choise",
+            "description": "cool / colorful / comfy",
+            "color": "#d7b2ff",
+            "image": "banner-2.webp",
+            "link": "/women/dresses"
+        }
+    },
+    "sale-banner": {
+        "left": {
+            "description": "Low Price",
+            "title": "High Coziness",
+            "sale": "Upto 50% off",
+            "image": "sale-1.jpg",
+            "link": "/women/t-shirts"
+        },
+        "right": {
+            "description": "Beyoung Presents",
+            "title": "Breezy Summer Style",
+            "sale": "Upto 50% off",
+            "image": "sale-2.jpg",
+            "link": "/women/dresses"
+        }
+    },
+    "brands": ["nike", "h&m", "levi's", "us-polo", "puma"],
+    "feedback": {
+        "Floyd Miles": {
+            "photo": "floyd-miles.jpg",
+            "message": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+            "stars": 4.5
+        },
+        "Ronald Richard": {
+            "photo": "ronald-richards.jpg",
+            "message": "ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+            "stars": 4
+        },
+        "Savannah Nguyen": {
+            "photo": "savannah-nguyen.jpg",
+            "message": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+            "stars": 3.5
+        },
+        "Jack Nilson": {
+            "photo": "jack-nilson.jpg",
+            "message": "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+            "stars": 5
+        },
+        "Julie Blackwood": {
+            "photo": "julie-blackwood.jpg",
+            "message": "Amet minim mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+            "stars": 4
+        }   
+    },
+    "shippingInfo": {
+        "Secure Payment": {
+            "image": "payment"
+        },
+        "Size & Fit": {
+            "image": "size-fit"
+        },
+        "Free Shipping": {
+            "image": "shipping"
+        },
+        "Free Returns": {
+            "image": "returns"
+        }
+    },
+    "inputs": {
+        "First Name": {
+          "type": "text",
+          "placeholder": "First Name",
+          "required": true
+        },
+        "Last Name": {
+          "type": "text",
+          "placeholder": "Last Name",
+          "required": true
+        },
+        "Country / Region": {
+          "type": "text",
+          "placeholder": "Country / Region",
+          "required": true
+        },
+        "Company Name": {
+          "type": "text",
+          "placeholder": "Company (optional)",
+          "required": false
+        },
+        "Street Address": {
+          "type": "text",
+          "placeholder": "House number and street name",
+          "required": true
+        },
+        "Apt, suite, unit": {
+          "type": "email",
+          "placeholder": "apartment, suite, unit, etc. (optional)",
+          "required": false
+        },
+        "City": {
+            "type": "text",
+            "placeholder": "Town / City",
+            "required": true
+        },
+        "State": {
+            "type": "select",
+            "options": [ "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
+            "placeholder": "State",
+            "required": true
+        },
+        "Postal Code": {
+            "type": "text",
+            "placeholder": "Postal Code",
+            "required": true
+        },
+        "Phone Number": {
+          "type": "tel",
+          "placeholder": "Phone",
+          "required": true
+        }
+    }
+}
