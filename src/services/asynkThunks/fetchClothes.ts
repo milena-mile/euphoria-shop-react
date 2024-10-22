@@ -1,5 +1,5 @@
 import { ClothesData } from '../../slices/types';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where,  Query, DocumentData } from 'firebase/firestore';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { FetchClothesParams } from './types';
 import { firestore } from '../firebase';
@@ -9,7 +9,7 @@ export const fetchClothes = createAsyncThunk<ClothesData[], FetchClothesParams, 
     async ({gender, category}, {rejectWithValue}) => {
 
         try {
-            let clothesQuery = collection(firestore, gender);
+            let clothesQuery: Query<DocumentData> = collection(firestore, gender);
             if (category) {
                 clothesQuery = query(clothesQuery, where('category', '==', category));
             }

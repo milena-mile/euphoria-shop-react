@@ -16,7 +16,16 @@ const Checkout: React.FC<CheckoutProps> = ({cart, subtotal, shipping, setCart}) 
     const {userId} = useUserContext();
     const dispatch = useDispatch<StoreDispatch>();
     const inputs = Object.entries(data.inputs);
-    const [formData, setFormData] = useState<FormData>({});
+    const [formData, setFormData] = useState<FormData>({
+        "First Name": "",
+        "Last Name": "",
+        "Country / Region": "",
+        "Street Address": "",
+        "City": "",
+        "State": "",
+        "Postal Code": "",
+        "Phone": ""
+    });
     const [disabled, setDisabled] = useState<string[]>([]);
     const [confirmed, setConfirmed] = useState<boolean | undefined>();
 
@@ -80,7 +89,7 @@ const Checkout: React.FC<CheckoutProps> = ({cart, subtotal, shipping, setCart}) 
                                         {value.type === "select" && (
                                             <label className={`b-input ${key.toLowerCase().replace(/\s/g, "-")}`}>
                                                 <span className="b-input_label">{`${key}${value.required ? '*' : ''}`}</span>
-                                                <Dropdown options={value.options} onChange={option => handleFormData(key, option.value)} value="" placeholder="State" />
+                                                <Dropdown options={value.options || []} onChange={option => handleFormData(key, option.value)} value="" placeholder="State" />
                                             </label>  
                                         )}
                                     </React.Fragment>

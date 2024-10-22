@@ -1,11 +1,11 @@
 import { addToCart } from '../../../../services/asynkThunks/fetchesCart';
-import { CartItem, ClothesData } from '../../../../slices/types';
+import { CartData, ClothesData } from '../../../../slices/types';
 import { StoreDispatch } from '../../../../store/store';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useUserContext } from '../../../../context/userContext';
 
-const WishlistItem = (props: {item: ClothesData, cart: CartItem[], removeWishlistItem: (e: React.MouseEvent, item: ClothesData) => void}) => {
+const WishlistItem = (props: {item: ClothesData, cart: CartData[], removeWishlistItem: (e: React.MouseEvent, item: ClothesData) => void}) => {
     const product = props.item;
     const {userId} = useUserContext();
     const dispatch = useDispatch<StoreDispatch>();

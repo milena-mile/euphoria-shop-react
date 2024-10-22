@@ -1,5 +1,5 @@
 const formatFullDate = (date: Date): string => {
-    const options = { 
+    const options: Intl.DateTimeFormatOptions = { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric', 
@@ -12,7 +12,7 @@ const formatFullDate = (date: Date): string => {
 }
 
 function formatDayDate(date: Date): string {
-    const options = { 
+    const options: Intl.DateTimeFormatOptions = { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 

@@ -1,3 +1,5 @@
+import { OrderData } from "../pages/CartCheckout/types";
+
 interface ClothesData {
     id: string,
     name: string,
@@ -53,21 +55,12 @@ interface filterInitialState {
 
 type filterKeys = "color" | "sizes";
 
-type Order = {
-    id: string;
-    clothes: ClothesData[];
-    orderDate: Date;
-    deliveryDate: Date;
-    paymentMethod: string;
-    status: string;
-};
-
 interface UserData {
     id: string,
     email: string,
     wishlist?: ClothesData[],
     cart?: CartData[],
-    orders?: Order[]
+    orders?: OrderData[]
 }
 
-export type { CategoriesState, CartData, ClothesData, ClothesState, filterInitialState, filterKeys, Order, UserData };
+export type { CategoriesState, CartData, ClothesData, ClothesState, filterInitialState, filterKeys, UserData };

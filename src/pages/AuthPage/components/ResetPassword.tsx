@@ -1,4 +1,5 @@
 import { auth } from '../../../services/firebase';
+import { FirebaseError } from 'firebase/app';
 import { Link } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { useState } from 'react';
@@ -25,11 +26,13 @@ const ResetPassword = () => {
             setDisabled(true);
         } catch (error) {
             setError(true);
-            if (error.code === "auth/missing-email") {
-                setMessage("Enter your email")
-            } else {
-                setError(true);
-                setMessage("Reset wasn't send");
+            if (error instanceof FirebaseError) {
+                if (error.code === "auth/missing-email") {
+                    setMessage("Enter your email")
+                } else {
+                    setError(true);
+                    setMessage("Reset wasn't send");
+                }
             }
         }
     };

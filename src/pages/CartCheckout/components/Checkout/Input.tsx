@@ -99,7 +99,7 @@ const Input: React.FC<InputProps> = ({label, type, placeholder, required, setFor
                 className={`b-input_input ${type} ${error ? "error" : ""}`}
                 type={type} 
                 value={value}  
-                maxLength={name === "postal-code" ? 6 : null}
+                maxLength={name === "postal-code" ? 6 : undefined}
                 onFocus={handleInputFocus}
                 onBlur={validateInput}
                 placeholder={placeholder}

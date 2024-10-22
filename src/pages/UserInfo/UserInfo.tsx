@@ -15,7 +15,7 @@ import './userInfo.scss';
 const UserInfo = (props: {page: string}) => {
 	const {userId} = useUserContext();
     const dispatch = useDispatch<StoreDispatch>();
-    const [user, setUser] = useState<UserData>({"email": "", "id": ""});
+    const [user, setUser] = useState<UserData>({"email": "", "id": "", "orders": []});
     const [wishlist, setWishlist] = useState<ClothesData[]>([]);
 
     const removeWishlistItem = (event: React.MouseEvent, product: ClothesData) => {
@@ -41,7 +41,7 @@ const UserInfo = (props: {page: string}) => {
             <div className="b-user_main">
                 {props.page === "my-info" && <MyInfo email={user.email}/>}
                 {props.page === "wishlist" && <Wishlist user={user} removeWishlistItem={removeWishlistItem}/>}
-                {props.page === "orders" && <Orders orders={user.orders}/>}
+                {props.page === "orders" && <Orders orders={user.orders ?? []}/>}
             </div>
         </div>
     )

@@ -4,14 +4,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const PhotoSlider = (props: {images: string[]}) => {
-    const [nav1, setNav1] = useState(null);
-    const [nav2, setNav2] = useState(null);
-    let sliderRef1 = useRef(null);
-    let sliderRef2 = useRef(null);
+    const [nav1, setNav1] = useState<Slider | undefined>(undefined);
+    const [nav2, setNav2] = useState<Slider | undefined>(undefined);
+    const sliderRef1 = useRef<Slider | null>(null);
+    const sliderRef2 = useRef<Slider | null>(null);
 
     useEffect(() => {
-        setNav1(sliderRef1);
-        setNav2(sliderRef2);
+        if (sliderRef1.current) {
+            setNav1(sliderRef1.current);
+        }
+        if (sliderRef2.current) {
+            setNav2(sliderRef2.current);
+        }
     }, []);
 
     const settings = {
@@ -33,7 +37,7 @@ const PhotoSlider = (props: {images: string[]}) => {
         <div className="b-product_slider"> 
             <Slider
                 asNavFor={nav1}
-                ref={slider => (sliderRef2 = slider)}
+                ref={sliderRef2}
                 {...settings}
                 className="b-slider_thumb"
             >
@@ -44,7 +48,7 @@ const PhotoSlider = (props: {images: string[]}) => {
                 ))}
             </Slider>
             <Slider asNavFor={nav2} 
-                    ref={slider => (sliderRef1 = slider)}
+                    ref={sliderRef1}
                     arrows={false}
                     className="b-slider_main"
             >

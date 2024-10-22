@@ -3,7 +3,7 @@ import { OrderData } from '../../../CartCheckout/types';
 import { RootState } from '../../../../store/store';
 import { useSelector } from 'react-redux';
 
-const Orders = (props: {orders: OrderData[]}) => {
+const Orders = (props: {orders: OrderData[] | []}) => {
     const orders = props.orders;
     const loadingStatus = useSelector((state: RootState) => state.user.userLoadingStatus);
 
