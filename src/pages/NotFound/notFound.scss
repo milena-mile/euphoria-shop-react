@@ -1,0 +1,43 @@
+@import "../../style/mixins.scss";
+
+.b-notfound {
+    width: 50%;
+    margin: max(5vw, 50px) auto;
+    text-align: center;
+
+    @media (max-width: 700px) {
+        width: auto;
+        max-width: 90vw;
+    }
+
+    &_img {
+        margin: 0 auto;
+        width: 70%;
+
+        @media (max-width: 800px) {
+            width: 400px;
+            max-width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    h1 {
+        font-size: 1.85rem;
+        font-family: Coresans-Bold, sans-serif;
+    }
+
+    span {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--light-font);
+        max-width: 400px;
+        margin: 0 auto max(2vw, 20px);
+    }
+
+    &_button {
+        @include buttonBright;
+    }
+}

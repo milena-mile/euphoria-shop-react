@@ -90,7 +90,7 @@ const Checkout: React.FC<CheckoutProps> = ({cart, subtotal, shipping, setCart}) 
                                 <button className="b-checkout_submit" disabled={disabled.length > 0} onClick={e => handleDelivery(e)}>Continue to delivery</button>
                                 {orderLoading === "loading" && 
                                     <span className="b-loading-s">
-                                        <img src="images/loading-ico.svg" alt="loading" />
+                                        <img src="/images/loading-ico.svg" alt="loading" />
                                     </span>}
                                 {orderLoading === "error" && <span className="b-message error">Something went wrong</span>}
                             </div>

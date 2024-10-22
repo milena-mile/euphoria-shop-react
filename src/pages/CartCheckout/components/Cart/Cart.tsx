@@ -98,7 +98,7 @@ const Cart: React.FC<CartProps> = ({cart, subtotal, shipping, setSubtotal, setSh
                                 <span className="b-cart_total-sum">{`$${(subtotal + shipping - (subtotal * discount / 100)).toFixed(2)}`}</span>
                             </div>
                             <hr></hr>
-                            <Link to="/checkout" className="b-cart_checkout">Proceed To Checkout</Link>
+                            <Link to="/account/checkout" className="b-cart_checkout">Proceed To Checkout</Link>
                         </div>
                     </section>
                 </>

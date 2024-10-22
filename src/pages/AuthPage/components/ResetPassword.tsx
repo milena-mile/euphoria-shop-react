@@ -25,7 +25,6 @@ const ResetPassword = () => {
             setDisabled(true);
         } catch (error) {
             setError(true);
-            console.log(error.code);
             if (error.code === "auth/missing-email") {
                 setMessage("Enter your email")
             } else {

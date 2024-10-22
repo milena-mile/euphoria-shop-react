@@ -5,6 +5,7 @@ import Catalog from './pages/Catalog/Catalog';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Homepage from './pages/Homepage/Homepage';
+import NotFound from './pages/NotFound/NotFound';
 import PrivacyPolicy from './pages/TextPages/PrivacyPolicy';
 import ProductPage from './pages/ProductPage/ProductPage';
 import ProtectedRoute from './services/protectingRoute';
@@ -39,14 +40,14 @@ function App() {
 					<Route path="/reset-password" element={<AuthPage form={"reset-pass"}/>} />
 					<Route path="/change-password" element={<AuthPage form={"change-pass"}/>} />
 
-					<Route path="*" element={
+					<Route path="/account/*" element={
 						<ProtectedRoute userId={userId}>
 							<Routes>
-								<Route path="/my-info" element={<UserInfo page="my-info"/>} />
-								<Route path="/wishlist" element={<UserInfo page="wishlist" />} />
-								<Route path="/orders" element={<UserInfo page="orders" />} />
-								<Route path="/cart" element={<CartPage page="cart" />} />
-								<Route path="/checkout" element={<CartPage page="checkout" />} />
+								<Route path="my-info" element={<UserInfo page="my-info"/>} />
+								<Route path="wishlist" element={<UserInfo page="wishlist" />} />
+								<Route path="orders" element={<UserInfo page="orders" />} />
+								<Route path="cart" element={<CartPage page="cart" />} />
+								<Route path="checkout" element={<CartPage page="checkout" />} />
 							</Routes>
 						</ProtectedRoute>
 					} />
@@ -63,6 +64,8 @@ function App() {
 					<Route path="/privacy-policy" element={<PrivacyPolicy/>} />
 					<Route path="/about-us" element={<AboutUs/>} />
 					<Route path="/returns-refunds" element={<ReturnRefund/>} />
+
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>
 			<Footer/>

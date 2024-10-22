@@ -62,8 +62,8 @@ const Catalog = (props: {gender: string}) => {
                     </section>
                 ) : ( 
                     <div className="b-products_empty">
-                        <img src="/public/images/not-found.svg" className="b-products_empty-nf" alt=""/>
-                        <img src="/public/images/loading.svg" className="b-products_empty-loading" alt=""/>
+                        <img src="/images/not-found.svg" className="b-products_empty-nf" alt=""/>
+                        <img src="/images/loading.svg" className="b-products_empty-loading" alt=""/>
                         <span className="b-products_empty-text">No products were found matching filters.</span>
                     </div>
                 
