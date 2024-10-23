@@ -11,12 +11,12 @@ const FeedbackItem = (props: {name: string, info: Feedback}) => {
     return (
         <>
             <div className="b-feedback_photo">
-                <img src={`/images/feedback/${props.info.photo}`} alt={props.name} />
+                <img src={`./images/feedback/${props.info.photo}`} alt={props.name} />
             </div>
             <div className="b-feedback_raing">
                 {[...Array(5).keys()].map((i) => (
                     <span className="b-feedback_star" key={i}>
-                        <img src={`/images/star-${handleRating(props.info.stars, i)}.svg`} />
+                        <img src={`./images/star-${handleRating(props.info.stars, i)}.svg`} />
                     </span>
                 ))}
             </div>

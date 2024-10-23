@@ -23,7 +23,7 @@ const CategoriesCards = (props: {gender: string}) => {
                 {categories.map((item, i) => (
                     <Link to={`/${props.gender}/${item.toLowerCase().replace(/ /g, "-")}`} className="b-cat-cards_item" key={i}>
                         <div className="image-wrapper b-cat-cards_image">
-                            <img src={`/images/categories/${props.gender}/${item.toLowerCase().replace(/ /g, "-")}.jpg`} alt={item} />
+                            <img src={`./images/categories/${props.gender}/${item.toLowerCase().replace(/ /g, "-")}.jpg`} alt={item} />
                         </div>
                         <span className="b-cat-cards_name">{item}</span>
                         <span className="b-cat-cards_desc">Explore Now!</span>

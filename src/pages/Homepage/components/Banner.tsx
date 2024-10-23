@@ -15,7 +15,7 @@ const Banner = () => {
         >
             {Object.entries(data).map(([key, value]) => (
                 <SwiperSlide style={{ backgroundColor: value.color }} key={key}>
-                    <img className='b-banner_image' src={`images/${value.image}`} alt={value.title} loading="lazy"/>
+                    <img className='b-banner_image' src={`./images/${value.image}`} alt={value.title} loading="lazy"/>
                     <div className='b-banner_info'>
                         <span className='b-banner_category'>{value.category}</span>
                         <h2 className='b-banner_title'>{value.title}</h2>

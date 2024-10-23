@@ -90,7 +90,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                         </svg>
                     </h3>
                     <div className="b-filters_filter">
-                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="/images/loading-ico.svg" alt="loading"/></span>}
+                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="./images/loading-ico.svg" alt="loading"/></span>}
                         {loadingStatus === "idle" && 
                             <>
                                 {categories.map((item, i) => (
@@ -110,7 +110,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                         </svg>
                     </h3>
                     <div className="b-filters_filter price">
-                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="/images/loading-ico.svg" alt="loading"/></span>}
+                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="./images/loading-ico.svg" alt="loading"/></span>}
                         {loadingStatus === "idle" && <RangeFilter price={price}/>}
                     </div>
                     <h3 className="b-filters_title angle active" onClick={() => setFilterItemOpen(!filterItemOpen)}>
@@ -120,7 +120,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                         </svg>
                     </h3>
                     <div className="b-filters_filter color">
-                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="/images/loading-ico.svg" alt="loading"/></span>}
+                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="./images/loading-ico.svg" alt="loading"/></span>}
                         {loadingStatus === "idle" &&
                             <>
                                 {colors.map((item, i) => (
@@ -142,7 +142,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                         </svg>
                     </h3>
                     <div className="b-filters_filter sizes">
-                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="/images/loading-ico.svg" alt="loading"/></span>}
+                        {loadingStatus === "loading" && <span className="b-filters_loading"><img src="./images/loading-ico.svg" alt="loading"/></span>}
                         {loadingStatus === "idle" &&
                             <>
                                 {sizes.map((item, i) => (

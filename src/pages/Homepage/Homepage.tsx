@@ -21,7 +21,7 @@ const Homepage = () => {
             </section>
             <section className="b-shop-now">
                 <div className="b-shop-now_item--left">
-                    <img src="/images/shop-now-back.jpg" className="b-shop-now_item-image" alt="shop now" />
+                    <img src="./images/shop-now-back.jpg" className="b-shop-now_item-image" alt="shop now" />
                     <div className="b-shop-now_item-info">
                         <h3 className="b-shop-now_item-title">WE MADE YOUR EVERYDAY FASHION BETTER!</h3>
                         <span className="b-shop-now_item-desc">In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7</span>
@@ -29,7 +29,7 @@ const Homepage = () => {
                     </div>
                 </div>
                 <div className="b-shop-now_item--right">
-                <img src="/images/shop-now-people.jpg" className="b-shop-now_item-image" alt="shop now" />
+                <img src="./images/shop-now-people.jpg" className="b-shop-now_item-image" alt="shop now" />
                 </div>
             </section>
             <CategoriesCards gender={"men"} />
@@ -40,7 +40,7 @@ const Homepage = () => {
                 <div className="b-brands_list">
                     {brands.map((item, i) =>(
                         <div className="b-brands_item" key={i}>
-                            <img src={`/images/brands/${item}.svg`} alt={item} />
+                            <img src={`./images/brands/${item}.svg`} alt={item} />
                         </div>
                     ))}
                 </div>

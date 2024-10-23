@@ -2,8 +2,8 @@
   "name": "euphoria-shop-react",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/milena-mile/euphoria-shop-react",
   "type": "module",
-  "homepage": "https://milena-mile.github.io/euphoria-shop-react",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

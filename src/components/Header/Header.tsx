@@ -19,7 +19,7 @@ const Header = () => {
 		<header className="b-header">
 			<div className="b-header_wrapper">
 				<Link to="/" className="b-header_logo">
-					<img src="/images/logo.svg" alt="logo" />
+					<img src="./images/logo.svg" alt="logo" />
 				</Link>
 				<button className={`b-header_mobile-button ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}></button>
 				<div className={`b-header_nav ${menuOpen ? "active" : ""}`}>

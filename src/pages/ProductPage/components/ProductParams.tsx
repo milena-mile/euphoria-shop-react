@@ -113,7 +113,7 @@ const ProductParams = (props: {product: ClothesData}) => {
                 {Object.entries(shipping).map(([key, value]) => (
                     <div className="b-product_shipping-item" key={key}>
                         <div className="b-product_shipping-image">
-                            <img src={`/images/${value.image}.svg`} alt="" />
+                            <img src={`./images/${value.image}.svg`} alt="" />
                         </div> 
                         <span className="b-product_shipping-title">{key}</span>
                     </div>

@@ -29,7 +29,7 @@ const AuthPage = (props: {form: string}) => {
     return (
         <div className="b-auth">
             <div className="b-auth_image">
-                <img src={`/images/${props.form}.jpg`} alt={props.form} />
+                <img src={`./images/${props.form}.jpg`} alt={props.form} />
             </div>
             <div className="b-auth_form">
                 {props.form === "signup" && 
