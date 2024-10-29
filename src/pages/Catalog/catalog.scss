@@ -14,6 +14,7 @@
 .b-products {
     width: 76%;
     display: grid;
+    align-items: flex-start;
     row-gap: 30px;
     column-gap: 3.5%;
     margin: 40px 0;
@@ -27,20 +28,29 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 auto;
+        align-items: center;
+        margin: max(5vw, 70px) auto;
     }
 
     &_empty-nf {
-        width: 8vw;
+        width: max(8vw, 150px);
+        margin-left: min(-6vw, -113px);
         position: relative;
         z-index: 2;
     }
 
     &_empty-loading {
-        width: 10vw;
-        margin-left: 2vw;
-        margin-top: -2vw;
+        width: max(10vw, 187px);
+        margin-left: max(3vw, 56px);
+        margin-top: min(-1vw, -15px);
         margin-bottom: 20px;
+    }
+    
+    &_empty-text {
+        font-family: "Causten-Bold", sans-serif;
+        font-size: 1.5rem;
+        max-width: 80%;
+        text-align: center;
     }
 
     &_loading {
