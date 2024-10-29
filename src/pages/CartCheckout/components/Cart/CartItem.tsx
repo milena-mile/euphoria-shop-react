@@ -37,8 +37,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
                         setItemSubtotal(total.totalPrice + total.shippingPrice);
                         setDisabled(false);
                     });
-            }
-
+            } 
         } 
         if (type == "inc") {
             dispatchReducer({type: "inc"});
@@ -71,7 +70,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
                 <span className="b-cart_price">${product.price.toFixed(2)}</span> 
             </div>
             <div className="b-cart_cell quantity">
-                <button className="b-cart_quantity-button dec" onClick={(e) => handleQuantity(e, "dec", product)} disabled={disabled}>
+                <button className="b-cart_quantity-button dec" onClick={(e) => handleQuantity(e, "dec", product)} disabled={quantity.count == 1 ? true : disabled}>
                     <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.2412 1L1 1" stroke="#3C4242" strokeWidth="1.03964" strokeLinecap="round"/>
                     </svg>
