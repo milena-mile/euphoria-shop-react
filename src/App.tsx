@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useUserContext } from './context/userContext';
 import './App.scss';
+import Contact from './pages/TextPages/Contact';
 
 function App() {
 	const {pathname} = useLocation();
@@ -64,6 +65,7 @@ function App() {
 					<Route path="/privacy-policy" element={<PrivacyPolicy/>} />
 					<Route path="/about-us" element={<AboutUs/>} />
 					<Route path="/returns-refunds" element={<ReturnRefund/>} />
+					<Route path="/contact-us" element={<Contact/>} />
 
 					<Route path="*" element={<NotFound />} />
 				</Routes>
