@@ -21,7 +21,6 @@ const Filters: React.FC<FilterProps> = (props) => {
     const [colors, setColors] = useState<string[]>([]);
     const [sizes, setSizes] = useState<string[]>([]);
     const [filterOpen, setFilterOpen] = useState(false);
-    const [filterItemOpen, setFilterItemOpen] = useState(true);
 
     const filters = useSelector((state: RootState) => state.filters);
     const loadingStatus = useSelector((state: RootState) => state.clothes.goodsLoadingStatus);
@@ -83,7 +82,7 @@ const Filters: React.FC<FilterProps> = (props) => {
             <button className="b-filters_button" onClick={() => setFilterOpen(!filterOpen)}>{filterOpen ? "Close Filters" : "Open Filters"}</button>
             <div className={`b-filters_wrap ${filterOpen ? " active" : ""}`}>
                 <div className="b-filters_item">
-                    <h3 className={`b-filters_title ${filterItemOpen ? "active" : ""}`}  onClick={() => setFilterItemOpen(!filterItemOpen)}>
+                    <h3 className="b-filters_title active"  onClick={(e) => e.currentTarget.classList.toggle("active")}>
                         <span>Filter</span>
                         <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.83333 6.33333L2.83333 1.75M2.83333 18.25L2.83333 10M13.8333 18.25L13.8333 10M8.33333 18.25V13.6667M8.33333 10V1.75M13.8333 6.33333L13.8333 1.75M1 6.33333H4.66667M6.5 13.6667H10.1667M12 6.33333L15.6667 6.33333" stroke="#807D7E" strokeWidth="1.8" strokeLinecap="round"/>
@@ -103,7 +102,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                             </>
                         }
                     </div>
-                    <h3 className="b-filters_title angle active" onClick={() => setFilterItemOpen(!filterItemOpen)}>
+                    <h3 className="b-filters_title angle active" onClick={(e) => e.currentTarget.classList.toggle("active")}>
                         <span>Price</span>
                         <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 11.7415L5.73782 7.00373C6.08739 6.65416 6.08739 6.08739 5.73782 5.73782L1 1" stroke="#8A8989" strokeWidth="1.8" strokeLinecap="round"/>
@@ -113,7 +112,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                         {loadingStatus === "loading" && <span className="b-filters_loading"><img src="./images/loading-ico.svg" alt="loading"/></span>}
                         {loadingStatus === "idle" && <RangeFilter price={price}/>}
                     </div>
-                    <h3 className="b-filters_title angle active" onClick={() => setFilterItemOpen(!filterItemOpen)}>
+                    <h3 className="b-filters_title angle active" onClick={(e) => e.currentTarget.classList.toggle("active")}>
                         <span>Colors</span>
                         <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 11.7415L5.73782 7.00373C6.08739 6.65416 6.08739 6.08739 5.73782 5.73782L1 1" stroke="#8A8989" strokeWidth="1.8" strokeLinecap="round"/>
@@ -135,7 +134,7 @@ const Filters: React.FC<FilterProps> = (props) => {
                             </>
                         }
                     </div>
-                    <h3 className="b-filters_title angle active"  onClick={() => setFilterItemOpen(!filterItemOpen)}>
+                    <h3 className="b-filters_title angle active"  onClick={(e) => e.currentTarget.classList.toggle("active")}>
                         <span>Size</span>
                         <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 11.7415L5.73782 7.00373C6.08739 6.65416 6.08739 6.08739 5.73782 5.73782L1 1" stroke="#8A8989" strokeWidth="1.8" strokeLinecap="round"/>
