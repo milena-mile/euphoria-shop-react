@@ -1,5 +1,5 @@
-import { CartData, ClothesData } from "../../slices/types";
-import { FormData, OrderData } from "../../pages/CartCheckout/types";
+import { ClothesData, WishlistCartData } from '../../slices/types';
+import { FormData, OrderData } from '../../pages/CartCheckout/types';
 
 interface FetchClothesParams {
     gender: string;
@@ -14,27 +14,44 @@ interface FetchProductParams {
 interface WishlistPayload {
     userId: string;
     product: ClothesData;
+    productLink: string;
 }
   
 interface WishlistResponse {
     userId: string;
-    product: ClothesData;
+    wishlistItem: WishlistCartData;
+}
+
+interface WishlistRemovePayload {
+    userId: string;
+    product: WishlistCartData | ClothesData;
+    productLink: string;
 }
 
 interface CartPayload {
     userId: string;
-    product: CartData;
+    product: WishlistCartData | ClothesData;
+    params: {
+        color: string | string[], 
+        size: string | string[],
+        link?: string
+    }
 }
   
 interface CartResponse {
     userId: string;
-    product: CartData;
+    product: WishlistCartData;
+}
+
+interface CartRemovePayload {
+    userId: string;
+    product: WishlistCartData;
 }
 
 interface OrderPayload {
     userId: string,
     formData: FormData,
-    cart: CartData[]
+    cart: WishlistCartData[]
     totalSum: string
 }
 
@@ -43,4 +60,13 @@ interface OrderResponse {
     item: OrderData
 }
 
-export type { CartPayload, CartResponse, FetchClothesParams, FetchProductParams, OrderPayload, OrderResponse, WishlistPayload, WishlistResponse };
+export type { CartPayload, 
+              CartRemovePayload, 
+              CartResponse, 
+              FetchClothesParams, 
+              FetchProductParams, 
+              OrderPayload, 
+              OrderResponse, 
+              WishlistPayload, 
+              WishlistRemovePayload, 
+              WishlistResponse };

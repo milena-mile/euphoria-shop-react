@@ -1,6 +1,6 @@
-import { CartData } from "../slices/types";
+import { WishlistCartData } from "../slices/types";
 
-const handleCartResult = (item: CartData, quantity?: number) => {
+const handleCartResult = (item: WishlistCartData, quantity?: number) => {
     const price = item.sale !== 0 ? item.price - (item.price * item.sale / 100) : item.price;
     const totalPrice = price * (quantity ? quantity : item.quantity);
     let shippingPrice;

@@ -1,7 +1,6 @@
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Loading from '../../components/Loading/Loading';
-import { CartData } from '../../slices/types';
 import { getCart, matchFilter, removeFromCart } from '../../services/asynkThunks/fetchesCart';
 import { handleCartResult } from '../../utils/handleCartResult';
 import { HandleRemoveArgs } from './types';
@@ -11,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useUserContext } from '../../context/userContext';
+import { WishlistCartData } from '../../slices/types';
 import './cart.scss';
 
 const CartPage = (props: {page: string}) => {
@@ -18,10 +18,9 @@ const CartPage = (props: {page: string}) => {
     const dispatch = useDispatch<StoreDispatch>();
     const loadingStatus = useSelector((state: RootState) => state.user.userLoadingStatus);
 
-    const [cart, setCart] = useState<CartData[]>([]);
+    const [cart, setCart] = useState<WishlistCartData[]>([]);
     const [subtotal, setSubtotal] = useState(0);
     const [shipping, setShipping] = useState(0);
-
 
     useEffect(() => {
         setSubtotal(0);

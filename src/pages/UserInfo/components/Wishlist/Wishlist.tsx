@@ -1,11 +1,11 @@
 import Loading from '../../../../components/Loading/Loading';
 import WishlistEmpty from './WishlistEmpty';
 import WishlistItem from './WishlistItem';
-import { ClothesData, UserData } from '../../../../slices/types';
+import { UserData, WishlistCartData } from '../../../../slices/types';
 import { RootState } from '../../../../store/store';
 import { useSelector } from 'react-redux';
 
-const Wishlist = (props: {user: UserData, removeWishlistItem: (e: React.MouseEvent, item: ClothesData) => void}) => {
+const Wishlist = (props: {user: UserData, removeWishlistItem: (e: React.MouseEvent, item: WishlistCartData) => void}) => {
     const wishlist = props.user.wishlist;
     const cart = props.user.cart !== undefined ? props.user.cart : [];
     
@@ -22,7 +22,9 @@ const Wishlist = (props: {user: UserData, removeWishlistItem: (e: React.MouseEve
                         {wishlist != undefined && wishlist.length > 0 && (
                             <>
                                 {wishlist.map((item) => (
-                                    <WishlistItem item={item} cart={cart} removeWishlistItem={props.removeWishlistItem} key={item.id}/>
+                                    <WishlistItem cart={cart} 
+                                                  item={item} 
+                                                  removeWishlistItem={props.removeWishlistItem} key={item.id}/>
                                 ))}
                             </>
                         )}

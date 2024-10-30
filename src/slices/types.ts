@@ -21,16 +21,28 @@ interface ClothesData {
     video?: string
 }
 
-interface CartData {
+interface WishlistCartData {
     id: string,
     name: string,
-    color: string,
-    size: string,
+    color: string[] | string,
+    photo: string,
     price: number,
     sale: number,
-    photo: string,
+    sizes: string[] | string,
+    link: string,
     quantity: number
 }
+
+// interface CartData {
+//     id: string,
+//     name: string,
+//     color: string,
+//     size: string,
+//     price: number,
+//     sale: number,
+//     photo: string,
+//     quantity: number
+// }
 
 type LoadingStatus = 'idle' | 'loading' | 'error';
 
@@ -58,9 +70,9 @@ type filterKeys = "color" | "sizes";
 interface UserData {
     id: string,
     email: string,
-    wishlist?: ClothesData[],
-    cart?: CartData[],
+    wishlist?: WishlistCartData[],
+    cart?: WishlistCartData[],
     orders?: OrderData[]
 }
 
-export type { CategoriesState, CartData, ClothesData, ClothesState, filterInitialState, filterKeys, UserData };
+export type { CategoriesState, ClothesData, ClothesState, filterInitialState, filterKeys, UserData, WishlistCartData };

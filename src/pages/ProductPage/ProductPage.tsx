@@ -19,6 +19,7 @@ const ProductPage = () => {
     const dispatch = useDispatch<StoreDispatch>();
     
     const [product, setProduct] = useState<ClothesData>();
+    const [link, setLink] = useState("");
 
     const loadingStatus = useSelector((state: RootState) => state.product.productLoadingStatus);
 
@@ -28,8 +29,12 @@ const ProductPage = () => {
                 .unwrap()
                 .then(data => {
                     setProduct(data);
+                    const link = `/${gender}/${data.category}/${productID}`;
+                    setLink(link);
                 });
+            
         } 
+        
     }, [dispatch, gender, productID]);
 
     return (
@@ -40,7 +45,7 @@ const ProductPage = () => {
                     {(product && product.photos && product.photos.length > 0) && (
                         <PhotoSlider images={product.photos} /> 
                     )}
-                    {product && <ProductParams product={product}/>}
+                    {product && <ProductParams product={product} link={link}/>}
                 </div>
                 {product && <ProductDescription product={product}/>}
             </article>   

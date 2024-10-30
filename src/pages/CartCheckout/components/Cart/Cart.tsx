@@ -61,7 +61,7 @@ const Cart: React.FC<CartProps> = ({cart, subtotal, shipping, setSubtotal, setSh
                                   handleRemove={handleRemove} 
                                   setSubtotal={setSubtotal} 
                                   setShipping={setShipping} 
-                                  key={`${item.id}-${item.color}-${item.size}`} />
+                                  key={`${item.id}-${item.color}-${item.sizes}`} />
                     ))}
                     <section className="b-cart_result">
                         <div className="b-cart_discount">

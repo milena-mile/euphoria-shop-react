@@ -1,6 +1,5 @@
 import quantityReducer from '../../../../services/quantityReducer';
 import { addToCart, removeQuantityCart } from '../../../../services/asynkThunks/fetchesCart';
-import { CartData } from '../../../../slices/types';
 import { CartItemProps } from '../../types';
 import { handleCartResult } from '../../../../utils/handleCartResult';
 import { StoreDispatch } from '../../../../store/store';
@@ -8,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { useReducer } from 'react';
 import { useState } from 'react';
 import { useUserContext } from '../../../../context/userContext';
+import { WishlistCartData } from '../../../../slices/types';
 
 const CartItem: React.FC<CartItemProps> = (props) => {
     const {handleRemove, product, setSubtotal, setShipping} = props;
@@ -21,7 +21,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
     const [itemSubtotal, setItemSubtotal] = useState(totalPrice + shippingPrice);
     const [disabled, setDisabled] = useState(false);
 
-    const handleQuantity = (event: React.MouseEvent, type: string, product: CartData) => {
+    const handleQuantity = (event: React.MouseEvent, type: string, product: WishlistCartData) => {
         event.preventDefault();
         setDisabled(true);
 
@@ -40,8 +40,12 @@ const CartItem: React.FC<CartItemProps> = (props) => {
             } 
         } 
         if (type == "inc") {
+            const params = {
+                color: product.color,
+                size: product.sizes
+            }
             dispatchReducer({type: "inc"});
-            dispatch(addToCart({userId, product})).unwrap()
+            dispatch(addToCart({userId, product, params})).unwrap()
                 .then(data => {
                     const total = handleCartResult(data.product);
                     setSubtotal(prevState => prevState + total.price);
@@ -56,13 +60,13 @@ const CartItem: React.FC<CartItemProps> = (props) => {
     return (
         <div className="b-cart_row">
             <div className="b-cart_cell details">
-                <div className="b-cart_image">
+                <a href={`#${product.link}`} className="b-cart_image">
                     <img src={product.photo} alt={product.name} />
-                </div>
+                </a>
                 <div className="b-cart_details">
-                    <span className="b-cart_name">{product.name}</span>
+                    <a href={`#${product.link}`} className="b-cart_name">{product.name}</a>
                     <span className="b-cart_color">Color: {product.color}</span>
-                    <span className="b-cart_size">Size: {product.size}</span>
+                    <span className="b-cart_size">Size: {product.sizes}</span>
                 </div>
             </div>
             <div className="b-cart_cell price">

@@ -2,7 +2,7 @@ import AsideUser from './components/UserAside';
 import MyInfo from './components/MyInfo';
 import Orders from './components/Orders/Orders';
 import Wishlist from './components/Wishlist/Wishlist';
-import { ClothesData } from '../../slices/types';
+import { WishlistData } from '../../slices/types';
 import { fetchUser } from '../../services/asynkThunks/fetchUser';
 import { removeFromWishlist } from '../../services/asynkThunks/fetchesWishlist';
 import { StoreDispatch } from '../../store/store';
@@ -15,16 +15,18 @@ import './userInfo.scss';
 const UserInfo = (props: {page: string}) => {
 	const {userId} = useUserContext();
     const dispatch = useDispatch<StoreDispatch>();
-    const [user, setUser] = useState<UserData>({"email": "", "id": "", "orders": []});
-    const [wishlist, setWishlist] = useState<ClothesData[]>([]);
+    const [user, setUser] = useState<UserData>({"email": "", "id": "", "orders": [], wishlist: []});
+    const [wishlist, setWishlist] = useState<WishlistData[]>([]);
 
-    const removeWishlistItem = (event: React.MouseEvent, product: ClothesData) => {
+    const removeWishlistItem = (event: React.MouseEvent, product: WishlistData) => {
         event.preventDefault();
  
          if (product && product.id) {
-             dispatch(removeFromWishlist({userId, product})).unwrap().then((data) => {
+            const productLink = product.link;
+             dispatch(removeFromWishlist({userId, product, productLink})).unwrap().then((data) => {
+                console.log(data);
                 setWishlist(prevState => 
-                    prevState.filter((item) => item.id !== data.product.id)
+                    prevState.filter((item) => item.id !== data.wishlistItem.id)
                 );
              });
          } 

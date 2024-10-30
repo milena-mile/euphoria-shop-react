@@ -10,24 +10,26 @@ const CatalogItem = (props: {product: ClothesData, gender: string, wishProduct: 
     const {userId} = useUserContext();
     const dispatch = useDispatch<StoreDispatch>();
     const navigate = useNavigate();
+    const productLink = `/${gender}/${product.category}/${product.id}`;
 
     const handleWishlistItem = (event: React.MouseEvent) => {
         event.preventDefault();
+        
         if (userId) {
             event.currentTarget.classList.toggle("active");
             if (event.currentTarget.classList.contains("active")) {
-                dispatch(addToWishlist({userId, product}));
+                dispatch(addToWishlist({userId, product, productLink}));
             } else {
-                dispatch(removeFromWishlist({userId, product}));
+                dispatch(removeFromWishlist({userId, product, productLink}));
             }
         } else {
-            navigate("/sign-in");
+            navigate("/signin");
         }  
     } 
 
     return (
 
-        <Link to={`/${gender}/${product.category}/${product.id}`} className="b-card">
+        <Link to={productLink} className="b-card">
             <div className="b-card_image">
                 <img src={product.photos[0]} alt={product.name} />
             </div>

@@ -1,14 +1,14 @@
-import { CartData } from "../../slices/types";
+import { WishlistCartData } from "../../slices/types";
 
 interface CartItemProps {
-    product: CartData, 
+    product:  WishlistCartData, 
     setSubtotal: React.Dispatch<React.SetStateAction<number>>, 
     setShipping: React.Dispatch<React.SetStateAction<number>>, 
     handleRemove: (arg0: HandleRemoveArgs) => void
 }
 
 interface CartProps {
-    cart: CartData[],
+    cart:  WishlistCartData[],
     subtotal: number,
     shipping: number,
     setSubtotal: React.Dispatch<React.SetStateAction<number>>, 
@@ -17,8 +17,8 @@ interface CartProps {
 }
 
 interface CheckoutProps {
-    cart: CartData[], 
-    setCart: React.Dispatch<React.SetStateAction<CartData[]>>,
+    cart:  WishlistCartData[], 
+    setCart: React.Dispatch<React.SetStateAction< WishlistCartData[]>>,
     subtotal: number, 
     shipping: number
 }
@@ -45,7 +45,7 @@ interface FormInputs {
 
 interface HandleRemoveArgs {
     event: React.MouseEvent, 
-    product: CartData, 
+    product:  WishlistCartData, 
     itemSubtotal: number, 
     itemShipping: number
 }
@@ -64,7 +64,7 @@ interface InputProps {
 interface OrderData {
     id: string,
     formData: FormData,
-    clothes: CartData[],
+    clothes:  WishlistCartData[],
     totalSum: string,
     orderDate: string,
     deliveryDate: string,

@@ -155,6 +155,12 @@
         border-radius: 10px;
         overflow: hidden;
         grid-row: 1 / 4;
+        transition: 0.4s;
+
+        &:hover {
+            box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+        }
 
         img {
             @include coverImg;
@@ -163,6 +169,11 @@
 
     &_name {
         font-family: Causten-Bold, sans-serif;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &_color, &_size {

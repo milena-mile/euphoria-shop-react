@@ -106,10 +106,22 @@
         &-title {
             font-family: Causten-Bold, sans-serif;
             font-size: 1.25rem;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         &-img {
+            display: flex;
             aspect-ratio: 1 / 1;
+            transition: 0.4s;
+
+            &:hover {
+                box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+                transition: 0.4s;
+            }
 
             @media (max-width: 1000px) {
                 width: 100px;
