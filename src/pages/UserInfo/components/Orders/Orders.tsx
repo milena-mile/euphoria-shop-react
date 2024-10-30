@@ -24,7 +24,7 @@ const Orders = (props: {orders: OrderData[] | []}) => {
                             </div>
                             <div className="b-orders_products">
                                 {order.clothes.map(item => (
-                                    <div className="b-orders_products-item" key={`${item.name}-${item.color}-${item.size}`}>
+                                    <div className="b-orders_products-item" key={`${item.name}-${item.color}-${item.sizes}`}>
                                         <div className="b-orders_item-image">
                                             <img src={item.photo} alt={item.name} />
                                         </div>

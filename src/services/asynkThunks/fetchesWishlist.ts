@@ -17,7 +17,8 @@ export const addToWishlist = createAsyncThunk<WishlistResponse, WishlistPayload,
                 price: product.price,
                 sale: product.sale,
                 sizes: product.sizes,
-                link: productLink
+                link: productLink,
+                quantity: 1
             }
 
             await updateDoc(userRef, {
@@ -51,7 +52,8 @@ export const removeFromWishlist = createAsyncThunk<WishlistResponse, WishlistRem
                 price: product.price,
                 sale: product.sale,
                 sizes: product.sizes,
-                link: productLink
+                link: productLink,
+                quantity: 1
             }
 
             await updateDoc(userRef, {

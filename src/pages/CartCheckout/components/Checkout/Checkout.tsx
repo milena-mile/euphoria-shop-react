@@ -109,14 +109,14 @@ const Checkout: React.FC<CheckoutProps> = ({cart, subtotal, shipping, setCart}) 
                         <h2 className="b-checkout_cart-title">Order Summary</h2>
                         <div className="b-checkout_cart-wrap">
                             {cart.map(product => (
-                                <div className="b-checkout_item" key={`${product.name}-${product.color}-${product.size}`}>
+                                <div className="b-checkout_item" key={`${product.name}-${product.color}-${product.sizes}`}>
                                     <div className="b-checkout_item-image">
                                         <img src={product.photo} alt={product.name} />
                                     </div>
                                     <div className="b-checkout_details">
                                         <span className="b-checkout_name">{product.name} <span className="b-checkout_quantity">x {product.quantity}</span></span>
                                         <span className="b-checkout_param"><strong>Color:</strong> {product.color}</span>
-                                        <span className="b-checkout_param"><strong>Size:</strong> {product.size}</span>
+                                        <span className="b-checkout_param"><strong>Size:</strong> {product.sizes}</span>
                                     </div>
                                     <div className="b-checkout_price">
                                         {product.sale !== 0 && <span className="b-checkout_price-new">${(product.price - (product.price * product.sale / 100)).toFixed(2)}</span>}

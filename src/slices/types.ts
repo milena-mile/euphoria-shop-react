@@ -33,17 +33,6 @@ interface WishlistCartData {
     quantity: number
 }
 
-// interface CartData {
-//     id: string,
-//     name: string,
-//     color: string,
-//     size: string,
-//     price: number,
-//     sale: number,
-//     photo: string,
-//     quantity: number
-// }
-
 type LoadingStatus = 'idle' | 'loading' | 'error';
 
 interface ClothesState {
