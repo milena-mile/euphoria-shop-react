@@ -26,12 +26,12 @@ const UserInfo = (props: {page: string}) => {
              dispatch(removeFromWishlist({userId, product, productLink})).unwrap().then((data) => {
                 console.log(data);
                 setWishlist(prevState => 
-                    prevState.filter((item) => item.id !== data.wishlistItem.id)
+                    prevState.filter((item) => console.log(item))
                 );
              });
          } 
      }
-
+//item.id !== data.wishlistItem.id
     useEffect(() => {
         dispatch(fetchUser(userId)).unwrap()
             .then((data: UserData) => setUser(data));

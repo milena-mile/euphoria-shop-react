@@ -155,11 +155,13 @@
 
         &-wrap {
             display: grid;
-            grid-template: auto / 48% 46%;
+            grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
             gap: 6%;
 
-            @media (max-width: 850px) {
-                grid-template: auto / 1fr;
+            @media (max-width: 920px) {
+                display: flex;
+                flex-direction: column;
+                gap: 30px
             }
         }
 
@@ -178,6 +180,16 @@
 
             @media (max-width: 600px) {
                 grid-template: auto / repeat(2, 50%);
+            }
+        }
+
+        &-video {
+            display: flex;
+            aspect-ratio: 1 / 0.565;
+
+            & > div {
+                width: 100% !important;
+                height: auto !important;
             }
         }
     }

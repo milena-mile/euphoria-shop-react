@@ -1,5 +1,5 @@
 import { ClothesData } from "../../../slices/types";
-
+import ReactPlayer from 'react-player';
 
 const ProductDescription = (props: {product: ClothesData}) => {
     const {product} = props;
@@ -21,7 +21,9 @@ const ProductDescription = (props: {product: ClothesData}) => {
                     </div>
                 </div>
                 {product.video && (
-                    <div className="b-product_desc-video"></div>
+                    <div className="b-product_desc-video">
+                         <ReactPlayer url={product.video} />
+                    </div>
                 )}
             </div>
         </div>
